@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "duckdb-data-platform"
+version = "0.1.0"
+description = "Local lakehouse on DuckDB: batch CSV ingest, metadata catalog, read-only SQL, streaming reads."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Kooroush Masoumi", email = "kooroushmasoumi@gmail.com" }]
+keywords = ["duckdb", "lakehouse", "data-platform", "catalog", "etl"]
+classifiers = [
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+]
+dependencies = []
+
+[project.optional-dependencies]
+engine = ["duckdb>=0.9"]
+dev = ["pytest>=7.4", "duckdb>=0.9"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
